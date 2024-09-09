@@ -1,0 +1,20 @@
+SCRIPT_START
+{
+NOP
+
+LVAR_INT objeto player001
+GET_PLAYER_CHAR 0 player001
+
+loop_principal:
+WAIT 0
+
+IF IS_CURRENT_CHAR_WEAPON player001 WEAPONTYPE_PISTOL_SILENCED
+AND GET_CHAR_PLAYER_IS_TARGETING 0 objeto
+AND IS_CHAR_SHOOTING player001
+    DELETE_CHAR objeto
+    PRINT_STRING_NOW "Pedestre mandado pro inferno" 3000
+ENDIF
+GOTO loop_principal
+WAIT 0 
+}
+SCRIPT_END
